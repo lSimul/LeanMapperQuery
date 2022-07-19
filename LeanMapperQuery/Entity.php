@@ -30,6 +30,12 @@ abstract class Entity extends LeanMapper\Entity
 	/** @var array */
 	protected static $magicMethodsPrefixes = [];
 
+	/**
+	 * @template U of Entity
+	 * @param    string    $field
+	 * @param    IQuery<U> $query
+	 * @return   U[]
+	 */
 	protected function queryProperty($field, IQuery $query)
 	{
 		return static::queryEntityProperty($this, $field, $query);
